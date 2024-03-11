@@ -63,8 +63,9 @@ def main():
     for person in people_data:
         bmi = calculate_bmi(person['weight'], person['height'])
         calories_burned = calculate_calories_burned(person['duration'])
-        print(f"{person['name']}: BMI = {bmi:.2f}, Calories burned = {calories_burned}")
-    
+        print(f"{person['name']}: BMI = {bmi:.2f},\
+            Calories burned = {calories_burned}")
+
     # Filter out the overweight people and print them out
     overweight_people = filter_overweight_people(people_data)
     print("\nOverweight People:")
