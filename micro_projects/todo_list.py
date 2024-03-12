@@ -27,6 +27,7 @@ def mark_task(tasks: list[str]) -> list[str]:
 
         marked_task = tasks[mark].replace("[ ]", "[X]")
         tasks[mark] = marked_task
+        print(f"Task {tasks[mark][3:]} marked as completed!")
     else:
         print("There are still no tasks.\nYou can add one by choosing 1.")
     return tasks
