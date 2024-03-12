@@ -1,3 +1,4 @@
+from datetime import datetime
 import requests
 
 
@@ -18,8 +19,12 @@ def display_repository_info(repositories: list[dict]) -> None:
         description = repo["description"]
         language = repo["language"]
         stars_count = repo["stargazers_count"]
+        date = repo["created_at"]
+        datetime_obj = datetime.fromisoformat(date[:-1])
+        date = datetime_obj.date()
 
         print(f"Repostiory: {name}")
+        print(f"Created date: {date}")
         print(f"With description: {description}")
         print(f"Repository language: {language}")
         print(f"Having {stars_count} stars")
@@ -27,7 +32,8 @@ def display_repository_info(repositories: list[dict]) -> None:
 
 
 def main():
-    repositories = fetch_user_repositories("zahariev-webbersof")
+    username = input("Enter a GitHub username:")
+    repositories = fetch_user_repositories(username)
     display_repository_info(repositories=repositories)
 
 
