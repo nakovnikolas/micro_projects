@@ -55,5 +55,6 @@ if __name__ == "__main__":
     bank.withdraw(200)
     bank.get_balance()
     sav_acc = SavingsAccount("987654321", 2000, 5)
+    sav_acc.deposit(1000)
     sav_acc.calculate_interest()
     print(sav_acc)
